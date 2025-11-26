@@ -25,10 +25,11 @@ spec:
           type: string
           title: Description
           description: Short description of the service
-        port:
+        port: 
           type: string
-          title: Port
-          description: Application port
+          title: ServerPortExposition
+          enum: ["5000", "8080", "8000"]
+          default: "5000"
 
     - title: Repository Location
       required: [repo]
@@ -53,10 +54,10 @@ spec:
           name: ${{ parameters.name }}
           owner: ${{ parameters.owner }}
           description: ${{ parameters.description }}
-          port: ${{ parameters.port }}
           destination:
             repo: ${{ parameters.repo }}
             owner: kunasharma
+          port: ${{ parameters.port }}
 
     - id: wait
       name: Wait for GitHub to index repo
