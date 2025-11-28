@@ -10,6 +10,8 @@ terraform {
 
 provider "aws" {
   region = "${{ values.aws_region }}"
+  access_key = "${{ values.accesskey }}"
+  secret_key = "${{ values.secretkey }}"
 }
 
 resource "aws_vpc" "main" {
@@ -28,6 +30,7 @@ resource "aws_instance" "example" {
     Name = "raman-HelloWorld-2"
   }
 
+}
 
 
 resource "aws_s3_bucket" "secure" {
