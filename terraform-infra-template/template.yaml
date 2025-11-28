@@ -32,14 +32,6 @@ spec:
           type: string
           title: Provide config for compute
           description: Size of vm
-        accesskey:
-          type: string
-          title: Provide your accounts-access-key
-          description: Provide your accounts-access-key
-        secretkey:
-          type: string
-          title: Provide your accounts secret-access-key
-          description: Provide your accounts secret-access-key 
         branchsuffix:
           type: string
           title: Unique PR branch Suffix
@@ -58,8 +50,6 @@ spec:
           vpc_cidr: ${{ parameters.vpc_cidr }}
           s3_bucket_name: ${{ parameters.s3_bucket_name }}
           instancetype: ${{ parameters.instancetype }}
-          accesskey: ${{ parameters.accesskey }}
-          secretkey: ${{ parameters.secretkey }}
         
 
     - id: publish
@@ -98,3 +88,4 @@ spec:
     links:
       - title: GitHub Repository
         url: ${{ steps['publish'].output.remoteUrl }}
+        
